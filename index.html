@@ -7,7 +7,10 @@
 <body ng-app="MyApp">
   <div ng-controller="myController">
     <js-xls onread="read" onerror="error"></js-xls>
+  
+	<p>{{prizeContestants}}</p>
   </div>
+
   <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
   <script type="text/javascript" src="bower_components/js-xlsx/dist/xlsx.core.min.js"></script>
   <script type="text/javascript" src="js/angular-js-xlsx.js"></script>
