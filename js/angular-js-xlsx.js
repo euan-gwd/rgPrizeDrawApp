@@ -1,4 +1,4 @@
-angular.module('MyApp.angular-js-xlsx', [])
+angular.module('myApp.angular-js-xlsx', [])
 .directive('jsXls', function () {
   return {
     restrict: 'E',
