@@ -15,7 +15,6 @@ angular.module('myApp.angular-js-xlsx', [])
             var data = e.target.result;
 
             /* if binary string, read with type 'binary' */
-            try {
               var workbook = XLS.read(data, {type: 'binary'});
 
               if (attrs.onread) {
@@ -24,17 +23,9 @@ angular.module('myApp.angular-js-xlsx', [])
                   handleRead(workbook);
                 }
               }
-            } catch(err) {
-              if (attrs.onerror) {
-                var handleError = scope[attrs.onerror];
-                if (typeof handleError === "function") {
-                  handleError(e);
-                }
-              }
-            }
 
             // Clear input file
-            element.val('');
+            // element.val('');
           };
 
           reader.readAsBinaryString(f);

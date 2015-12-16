@@ -1,11 +1,14 @@
-angular.module('myApp', ['myApp.angular-js-xlsx'])
-.controller('AddController', function($scope) {
+(function() {
+  
+var app = angular.module('myApp', []);
+
+app.controller('AddController', ['$scope', function($scope) {
     $scope.read = function(workbook) {
       
        // read xlxs file into json Array//
       var sheetName = workbook.SheetNames;  
       var sheets = workbook.Sheets;
-      var entries = {};
+      var entries = [];
       sheetName.forEach(function(sheets) {
         var jsonData = XLSX.utils.sheet_to_json(workbook.Sheets[sheetName]);
         entries = jsonData;
@@ -15,20 +18,54 @@ angular.module('myApp', ['myApp.angular-js-xlsx'])
       // window.sessionStorage.entries = angular.toJson(entries);  
       
       //  // retrieve entries from sessionStorage //
-      // var drawEntries = angular.fromJson(window.sessionStorage.entries || '[]');
+      // var drawEntries = window.sessionStorage.entries;
       
        // Show number of entries //
-      console.log(entries);
+      console.log(entries.length);
       $scope.drawEntries = entries;
 
-      // pick a random winner//
+     /* // pick a random winner//
       var winner = entries[Math.floor(Math.random()*entries.length)];
       console.log(winner); 
-      $scope.drawWinner = winner;
+      $scope.prizeWinner = winner;*/
       };
+}]);
 
-    $scope.error = function(e) {
-      /* DO SOMETHING WHEN ERROR IS THROWN */
-      console.log(e);
-    };
+app.directive('jsXls', function() {
+  return {
+    restrict: 'E',
+    template: '<input type="file" />',
+    replace: true,
+    link: function (scope, element, attrs) {
+
+      function handleSelect() {
+        var files = this.files;
+        for (var i = 0, f = files[i]; i != files.length; ++i) {
+          var reader = new FileReader();
+          var name = f.name;
+          reader.onload = function(e) {
+            var data = e.target.result;
+
+              var workbook = XLS.read(data, {type: 'binary'});
+
+              if (attrs.onread) {
+                var handleRead = scope[attrs.onread];
+                if (typeof handleRead === "function") {
+                  handleRead(workbook);
+                }
+              }
+
+            // Clear input file
+            // element.val('');
+          };
+
+          reader.readAsBinaryString(f);
+        }
+      }
+
+      element.on('change', handleSelect);
+    }
+  };
 });
+
+}());
