@@ -1,8 +1,22 @@
 (function() {
   
-var app = angular.module('myApp', []);
+var app = angular.module('prizeDrawApp', ['ui.router','ngAnimate']);
 
-app.controller('AddController', ['$scope', function($scope) {
+app.config(function($stateProvider, $urlRouterProvider) {
+  $stateProvider
+    .state("home", {
+          url: "/",
+          views: {
+            "home": {
+             templateUrl: "templates/home.html",
+             controller: "AddController"
+             }
+          }   
+      });
+    $urlRouterProvider.otherwise('/');
+});
+
+app.controller('AddController', ['$scope','$state', function($scope, $state) {
     $scope.read = function(workbook) {
       
        // read xlxs file into json Array//
@@ -29,7 +43,7 @@ app.controller('AddController', ['$scope', function($scope) {
       };
 }]);
 
-app.controller('listController', ['$scope', function($scope){
+app.controller('listController', ['$scope', '$state', function($scope, $state){
     var drawItems = angular.fromJson(window.sessionStorage.entries || '[]');
   
     $scope.selectedItems = drawItems;

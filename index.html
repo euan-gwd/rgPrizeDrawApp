@@ -6,14 +6,16 @@
   <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body ng-app="prizeDrawApp">
-  <div ng-controller="AddController">
+  <main ui-view></main>
+<!--   <div ng-controller="AddController">
      <js-xls onread="read"></js-xls>
      <hr>
-  </div>
+  </div> -->
    
   <script src="bower_components/jquery/dist/jquery.min.js"></script> 
   <script src="bower_components/angular/angular.min.js"></script>
   <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+  <script src="bower_components/angular-animate/angular-animate.min.js"></script>
   <script src="bower_components/js-xlsx/dist/xlsx.core.min.js"></script>
   <script src="js/app.js"></script>
 </body>
