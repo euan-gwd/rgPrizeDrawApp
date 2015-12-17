@@ -15,20 +15,25 @@ app.controller('AddController', ['$scope', function($scope) {
       });
 
       //  // Store entries in sessionStorage//
-      // window.sessionStorage.entries = angular.toJson(entries);  
+      window.sessionStorage.entries = angular.toJson(entries); 
       
       //  // retrieve entries from sessionStorage //
       // var drawEntries = window.sessionStorage.entries;
       
        // Show number of entries //
       console.log(entries.length);
-      $scope.drawEntries = entries;
 
-     /* // pick a random winner//
+      // pick a random winner//
       var winner = entries[Math.floor(Math.random()*entries.length)];
       console.log(winner); 
-      $scope.prizeWinner = winner;*/
       };
+}]);
+
+app.controller('listController', ['$scope', function($scope){
+    var drawItems = angular.fromJson(window.sessionStorage.entries || '[]');
+  
+    $scope.selectedItems = drawItems;
+
 }]);
 
 app.directive('jsXls', function() {
