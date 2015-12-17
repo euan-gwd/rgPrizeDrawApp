@@ -6,13 +6,15 @@ app.config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
     .state("home", {
           url: "/",
-          views: {
-            "home": {
-             templateUrl: "templates/home.html",
-             controller: "AddController"
-             }
-          }   
-      });
+          templateUrl: "templates/home.html",
+          controller: "AddController"
+      })
+      .state("results", {
+            url: "/results",
+            templateUrl: "templates/results.html",
+            controller: "ListController"
+          });
+     
     $urlRouterProvider.otherwise('/');
 });
 
@@ -30,23 +32,18 @@ app.controller('AddController', ['$scope','$state', function($scope, $state) {
 
       //  // Store entries in sessionStorage//
       window.sessionStorage.entries = angular.toJson(entries); 
-      
-      //  // retrieve entries from sessionStorage //
-      // var drawEntries = window.sessionStorage.entries;
-      
-       // Show number of entries //
-      console.log(entries.length);
-
-      // pick a random winner//
-      var winner = entries[Math.floor(Math.random()*entries.length)];
-      console.log(winner); 
+      $state.go('results');
       };
 }]);
 
-app.controller('listController', ['$scope', '$state', function($scope, $state){
+app.controller('ListController', ['$scope', '$state', function($scope, $state){
+    //Retrieve entries from sessionStorage //
     var drawItems = angular.fromJson(window.sessionStorage.entries || '[]');
-  
     $scope.selectedItems = drawItems;
+
+     // pick a random winner//
+    var winner = drawItems[Math.floor(Math.random()*drawItems.length)];
+    $scope.prizeWinner = winner;
 
 }]);
 
@@ -73,15 +70,10 @@ app.directive('jsXls', function() {
                   handleRead(workbook);
                 }
               }
-
-            // Clear input file
-            // element.val('');
           };
-
           reader.readAsBinaryString(f);
         }
       }
-
       element.on('change', handleSelect);
     }
   };
