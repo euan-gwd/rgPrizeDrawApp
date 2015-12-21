@@ -1,3 +1,6 @@
+body{
+	background-color: #5D7B7F;
+}
 .text-center{
 	text-align: center;
 }
@@ -5,7 +8,8 @@
 	display: flex;
 	flex-direction: column;
 	margin: auto;
-	min-height: 60vh;
+	min-height: 50vh;
+	height: 100vh;
 }
 .mdl-card {
 	display: flex;
@@ -14,23 +18,33 @@
 	margin: auto;
 }
 
-.mdl-shadow--2dp {
-    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
-}
-
-.mdl-card__title{
-	background-color: #43909b;
-	height: 10vh;
+.mdl-card_home_title{
+	height: 12.5vh;
 	margin-bottom: auto;
+	background: url('../img/RGMark.png') Right / contain no-repeat;
+	background-color: #43909b;
+	/*padding: .5rem;*/
 }
-.mdl-card__title-text {
+.mdl-card_home_title-text {
 	text-align: center;
 	color: whitesmoke;
 }
 
 .mdl-card__actions{
-	background-color: #93D9FF;
+	background-color: #7ADAE7;
 	margin-top: auto;
 	padding: 2.5vh 2.5vw;
 	text-align: center;
+}
+
+.mdl-typography--subhead-color-contrast, .mdl-typography--caption{
+	padding: 0 .5rem;
+}
+
+img { 
+	max-width: 80%;
+}
+.card-image{
+	margin: auto;
+	padding: .5rem 0;
 }

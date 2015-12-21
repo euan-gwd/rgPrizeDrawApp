@@ -1,13 +1,14 @@
 <div>
 	<div class="container" >
-			<h1 class="text-center">Prize Draw App</h1>
-			<div class="mdl-card mdl-shadow--2dp">
-				<div class="mdl-card__title">
-					<h4 class="mdl-card__title-text">Welcome</h4>
+			<div class="mdl-card mdl-shadow--16dp">
+				<div class="mdl-card_home_title">
+					<h3 class="mdl-card_home_title-text">Prize Draw Competition</h3>
 				</div>
-				<div>
-				<p class="text-center">Please click below to add correctly formatted excel file...</p>
-				</div>
+				<p class="mdl-typography--subhead-color-contrast"> Instructions for correct results:</p>
+				<p class="mdl-typography--caption"> In order to get this to work correctly a correctly formatted excel file is required, it needs to be a single sheet with headings as the first row. As shown below..</p>
+				<img src="../img/correct_formatted_excel_sheet.jpg" alt="correctly formatted excel sheet" class="card-image">
+				<p class="mdl-typography--caption"> Please Note that the headers cannot have any spaces in them.</p>
+				<p class="mdl-typography--caption"> Once you have it click on the button below and select it excel xlsx file to begin. </p>
 				<div class="mdl-card__actions mdl-card--border">
 					<js-xls onread="read"></js-xls>
 				</div>
