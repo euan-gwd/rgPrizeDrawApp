@@ -1,6 +1,6 @@
 (function() {
   
-var app = angular.module('prizeDrawApp', ['ui.router','ngAnimate']);
+var app = angular.module('prizeDrawApp', ['ui.router']);
 
 app.config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
@@ -50,7 +50,7 @@ app.controller('ListController', ['$scope', '$state', function($scope, $state){
 app.directive('jsXls', function() {
   return {
     restrict: 'E',
-    template: '<input type="file" />',
+    template: '<input type="file">',
     replace: true,
     link: function (scope, element, attrs) {
 
