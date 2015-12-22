@@ -2,7 +2,7 @@
   
 var app = angular.module('prizeDrawApp', ['ui.router']);
 
-app.config(function($stateProvider, $urlRouterProvider) {
+app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
   $stateProvider
     .state("home", {
           url: "/",
@@ -16,6 +16,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
           });
      
     $urlRouterProvider.otherwise('/');
+    $locationProvider.html5Mode(true);
 });
 
 app.controller('AddController', ['$scope','$state', function($scope, $state) {
