@@ -1,16 +1,18 @@
-	
-	<p> {{selectedItems.length}} confirmed entries </p>
-      <div class="list card">
-	      <div class="item item-divider">
-					<p>Your Winner is...</p>
-				</div>
-	      <div class="item item-body item-text-wrap">
-	          <h3>Name: {{prizeWinner.NAME}}</h3>
-	          <h3>Surname : {{prizeWinner.SURNAME}}</h3>
-	          <p>Email: {{prizeWinner.EMAIL}}</p>
-						<p>Location: {{prizeWinner.PROVIENCE}}</p>
-						<p>WIN YOUR SHARE OF R25 000 : {{prizeWinner.PRIZE1}}</p>
-						<p>WIN R5000/BLENDER : {{prizeWinner.PRIZE2}}</p>
+<div>
+	<div class="container">	
+		<!-- <p> {{selectedItems.length}} confirmed entries </p> -->
+	      <div class="mdl-card mdl-shadow--16dp">
+		      <div class="mdl-card_results_title">
+				  <h3 class="mdl-card_results_title-text">Your Winner is...</h3>
+			  </div>
+		      <div class="padding">
+		          <p class="mdl-typography--caption">Name: <span class="mdl-typography--subhead-color-contrast">{{prizeWinner.NAME}}</span></p>
+		          <p class="mdl-typography--caption">Surname : <span class="mdl-typography--subhead-color-contrast">{{prizeWinner.SURNAME}}</span></p>
+		          <p class="mdl-typography--caption">Email: <span class="mdl-typography--subhead-color-contrast">{{prizeWinner.EMAIL}}</span></p>
+				  <p class="mdl-typography--caption">Location: <span class="mdl-typography--subhead-color-contrast">{{prizeWinner.PROVIENCE}}</span></p>
+				  <p class="mdl-typography--caption">WIN YOUR SHARE OF R25 000 : {{prizeWinner.PRIZE1}}</p>
+				  <p class="mdl-typography--caption">WIN R5000/BLENDER : {{prizeWinner.PRIZE2}}</p>
+		      </div>
 	      </div>
-      </div>
-      
+	</div>
+</div>
