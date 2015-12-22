@@ -32,6 +32,7 @@ app.controller('AddController', ['$scope','$state', function($scope, $state) {
       });
 
       //  // Store entries in sessionStorage//
+      window.sessionStorage.clear();
       window.sessionStorage.entries = angular.toJson(entries); 
       $state.go('results');
       };
@@ -45,7 +46,9 @@ app.controller('ListController', ['$scope', '$state', function($scope, $state){
      // pick a random winner//
     var winner = drawItems[Math.floor(Math.random()*drawItems.length)];
     $scope.prizeWinner = winner;
-
+    $scope.$on('$locationChangeStart', function(event, newUrl, oldUrl) {
+      event.preventDefault();
+    });
 }]);
 
 app.directive('jsXls', function() {
