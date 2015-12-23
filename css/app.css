@@ -29,17 +29,14 @@ body{
 
 .mdl-card_home_title{
 	height: 12.5vh;
-	/*margin-bottom: auto;*/
 	background: url('../img/RGMark.png') Right / contain no-repeat;
 	background-color: #43909b;
 }
 
 .mdl-card_results_title{
 	height: 10.5vh;
-/*	margin-bottom: auto;*/
 	background: url('../img/RGMark.png') Right / contain no-repeat;
 	background-color: #FFAE6E;
-	/*padding: .5rem;*/
 }
 
 .mdl-card_home_title-text {
