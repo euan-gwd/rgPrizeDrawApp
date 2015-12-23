@@ -9,7 +9,14 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
           templateUrl: "templates/home.html",
           controller: "AddController"
       })
-      .state("results", {
+    
+    .state("prizedrawing", {
+          url: "/prizedrawing",
+          templateUrl: "templates/prizedrawing.html",
+          controller: "drawingController"
+        })
+   
+    .state("results", {
             url: "/results",
             templateUrl: "templates/results.html",
             controller: "ListController"
@@ -34,7 +41,7 @@ app.controller('AddController', ['$scope','$state', function($scope, $state) {
       //  // Store entries in sessionStorage//
       window.sessionStorage.clear();
       window.sessionStorage.entries = angular.toJson(entries); 
-      $state.go('results');
+      $state.go('prizedrawing');
       };
 }]);
 
@@ -49,6 +56,19 @@ app.controller('ListController', ['$scope', '$state', function($scope, $state){
     $scope.$on('$locationChangeStart', function(event, newUrl, oldUrl) {
       event.preventDefault();
     });
+}]);
+
+app.controller('drawingController', ['$scope', '$state', '$timeout', function($scope, $state, $timeout){
+   //Retrieve entries from sessionStorage //
+    var drawItems = angular.fromJson(window.sessionStorage.entries || '[]');
+    $scope.selectedItems = drawItems;
+    
+    $timeout(declareWinner, 5000);
+
+    function declareWinner (argument) {
+      $state.go('results');
+    } 
+
 }]);
 
 app.directive('jsXls', function() {
