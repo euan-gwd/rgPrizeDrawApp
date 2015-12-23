@@ -1,6 +1,6 @@
 (function() {
   
-var app = angular.module('prizeDrawApp', ['ui.router']);
+var app = angular.module('prizeDrawApp', ['ui.router', 'ngAnimate']);
 
 app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
   $stateProvider
