@@ -2,7 +2,7 @@
   
 var app = angular.module('prizeDrawApp', ['ui.router', 'ngAnimate']);
 
-app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
+app.config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
     .state("home", {
           url: "/",
@@ -23,7 +23,6 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
           });
      
     $urlRouterProvider.otherwise('/');
-    $locationProvider.html5Mode(true);
 });
 
 app.controller('AddController', ['$scope','$state', function($scope, $state) {
