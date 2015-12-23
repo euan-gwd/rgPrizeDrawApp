@@ -1,14 +1,12 @@
 {
-  "name": "angular-js-xlsx",
-  "version": "0.0.1",
-  "homepage": "https://github.com/brexis/angular-js-xlsx",
+  "name": "rgcom-prize-draw",
+  "version": "1.0",
+  "homepage": "http://www.amwic.co.za",
   "authors": [
-    "Boris KOUMONDJI <brexis2009@yahoo.fr>"
+    "Euan Greenwood <euan@amwic.co.za>"
   ],
-  "description": "An angular directive to read XLSX / XLSM / XLSB / XLS / SpreadsheetML (Excel Spreadsheet)",
-  "main": [
-    "angular-js-xlsx.js"
-  ],
+  "description": "A prize draw application",
+  "main": "index.html",
   "moduleType": [],
   "license": "MIT",
   "ignore": [
@@ -19,20 +17,13 @@
     "tests"
   ],
   "dependencies": {
-    "js-xlsx": "~0.8.0",
-    "angular": "~1.4.8"
+    "angular-ui-router": "~0.2.15",
+    "angular-animate": "~1.4.8",
+    "jquery": "~2.1.4"
   },
   "keywords": [
-    "excel",
-    "xls",
-    "xml",
-    "xlsx",
-    "xlsm",
-    "xlsb",
-    "ods",
-    "js-xls",
-    "js-xlsx",
-    "angular",
-    "directive"
-  ]
+    "prize-draw-angualr"
+  ],
+  "_direct": true,
+  "private": true
 }

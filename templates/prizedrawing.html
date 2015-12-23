@@ -1,11 +1,18 @@
 <div>
-	<div class="container">
+	<div class="container2">
 			<div class="mdl-card mdl-shadow--4dp">
 				<div class="mdl-card_home_title">
 					<h3 class="mdl-card_home_title-text">Prize Draw Competition</h3>
 				</div>
-				<p> {{selectedItems.length}} confirmed entries </p>
-				<p class="mdl-typography--caption"> Running draw now...</p>
+				<div class="padding">
+					<p class="mdl-typography--display-1-color-contrast text-center"> {{selectedItems.length}} Confirmed Entries </p>
+				</div>
+				<div class="spin-holder">
+					<span class="inner-circles-loader"></span>
+				</div>
+				<div class="mdl-card--border">
+				  <p class="mdl-typography--caption-force-preferred-font-color-contrast text-center"> Choosing winner now... </p>
+				</div>
 			</div>
 	</div>
 </div>
