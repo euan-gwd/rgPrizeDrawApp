@@ -1,5 +1,6 @@
 body{
 	background-color: #5D7B7F;
+	font-size: 1rem;
 }
 .text-center{
 	text-align: center;
@@ -42,6 +43,7 @@ body{
 .mdl-card_home_title-text {
 	text-align: center;
 	color: whitesmoke;
+	font-size: 2rem;
 }
 
 .mdl-card_results_title-text {
